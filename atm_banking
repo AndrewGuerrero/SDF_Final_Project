@@ -1,0 +1,60 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class BankingFinalProject {
+
+	public static void main(String[] args) {
+		
+		int balance = 10000, withdraw = 0, deposit;
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("Welcome to Guerrero Bank");
+		System.out.println();
+		
+		while(true) {
+			System.out.println("Guerrero ATM");
+			System.out.println("Choose 1 To Withdraw");
+			System.out.println("Choose 2 To Deposit");
+			System.out.println("Choose 3 To Check Balance");
+			System.out.println("Choose 4 To Exit");
+			System.out.println("What would you like to do? (1-4)");
+			int n = scan.nextInt();
+			
+			switch(n) {
+			
+			case 1:
+				System.out.print("Enter Money to be withdrawn: ");
+				if(balance >= withdraw) {
+					
+					balance = balance - withdraw;
+					System.out.println("Please Collect your money");
+				}
+				else {
+					System.out.println("Insufficient Balance");
+				}
+				System.out.println("");
+				break;
+				
+			case 2:
+				System.out.print("Enter money to be deposited: ");
+				deposit = scan.nextInt();
+				balance = balance + deposit;
+				System.out.println("Your money has successfully been deposited");
+				System.out.println("");
+				break;
+				
+			case 3:
+				System.out.println("Balance: " + balance);
+				System.out.println("");
+				break;
+			
+			case 4:
+				System.exit(0);
+			}
+
+		}
+		
+		
+	}
+
+}
